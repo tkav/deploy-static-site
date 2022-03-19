@@ -1,0 +1,1 @@
+aws s3 sync ./src s3://${TF_VAR_website_domain_main}-root --acl public-read --follow-symlinks --exclude '.git/*' --exclude '.github/*' --delete
