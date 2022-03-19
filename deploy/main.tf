@@ -1,6 +1,6 @@
 
 resource "aws_s3_bucket" "website_logs" {
-  bucket = "${var.website_domain_main}-logs"
+  bucket = "${var.sitename}-logs"
 
   force_destroy = true
 }
@@ -11,7 +11,7 @@ resource "aws_s3_bucket_acl" "website_logs" {
 }
 
 resource "aws_s3_bucket" "website_root" {
-  bucket = "${var.website_domain_main}-root"
+  bucket = "${var.sitename}-root"
 
   force_destroy = true
 }
@@ -38,7 +38,7 @@ resource "aws_s3_bucket_logging" "website_root" {
   bucket = aws_s3_bucket.website_root.id
 
   target_bucket = aws_s3_bucket.website_logs.id
-  target_prefix = "${var.website_domain_main}/"
+  target_prefix = "${var.sitename}/"
 }
 
 resource "aws_s3_bucket_policy" "update_website_root_bucket_policy" {
@@ -86,7 +86,7 @@ resource "aws_cloudfront_distribution" "website_cdn_root" {
 
   logging_config {
     bucket = aws_s3_bucket.website_logs.bucket_domain_name
-    prefix = "${var.website_domain_main}/"
+    prefix = "${var.sitename}/"
   }
 
   default_cache_behavior {
@@ -130,12 +130,4 @@ resource "aws_cloudfront_distribution" "website_cdn_root" {
 
 output "cloudfront_domain" {
   value = aws_cloudfront_distribution.website_cdn_root.domain_name
-}
-
-output "cloudfront_id" {
-  value = aws_cloudfront_distribution.website_cdn_root.id
-}
-
-output "origin_identity_id" {
-  value = aws_cloudfront_origin_access_identity.website_origin_identity.id
 }

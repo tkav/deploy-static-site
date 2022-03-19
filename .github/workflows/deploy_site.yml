@@ -27,4 +27,4 @@ jobs:
             - name: Deploy to S3
               run: make upload_site
               env:
-                TF_VAR_website_domain_main: ${{ secrets.TF_VAR_website_domain_main }}
+                TF_VAR_website_domain_main: ${{ secrets.TF_VAR_sitename }}

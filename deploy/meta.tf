@@ -17,7 +17,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      Project = var.website_domain_main
+      Project = var.sitename
     }
   }
 

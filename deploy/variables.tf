@@ -1,4 +1,4 @@
-variable "website_domain_main" {
-  description = "Main website domain, e.g. cloudmaniac.net"
+variable "sitename" {
+  description = "Name for your site."
   type        = string
 }
