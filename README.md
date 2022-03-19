@@ -2,6 +2,8 @@
 
 Quickly deploy a static site to AWS using Terraform, S3 and CloudFront (without a custom domain).
 
+To deploy a static site quickly to CloudFront with a custom domain, please use [tkav/cloudfront-static-site](https://github.com/tkav/cloudfront-static-site).
+
 # Usage
 
 ## Requirements
