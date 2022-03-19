@@ -6,17 +6,21 @@ To deploy a static site quickly to CloudFront with a custom domain, please use [
 
 # Usage
 
+This is a template repo! Click [`Use this template`](https://github.com/tkav/cloudfront-static-site/generate) before continuing on.
+
+[![Use this template](https://i.imgur.com/LYtQFxY.png)](https://github.com/tkav/cloudfront-static-site/generate)
+
+Then [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) and open this repo.
+
 ## Requirements
 - Terraform (>v1.0.0)
 
-1. Fork and clone this repo
-
-2. Update `variables.sh` and load environmental variables:
+1. Update `variables.sh` and load environmental variables:
 ```
 source variables.sh
 ```
 
-3. Replace and add your static website contents to `src` folder. The distribution will look for `index.html` and `404.html` pages. Make sure you have those.
+2. Replace and add your static website contents to `src` folder. The distribution will look for `index.html` and `404.html` pages. Make sure you have those.
 
 3. Deploy your site:
 ```
